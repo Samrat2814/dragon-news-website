@@ -1,6 +1,9 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import Home from "../Layouts/Home";
 import CategoryNews from "../Pages/CategoryNews";
+import AuthLayouts from "../Layouts/AuthLayouts";
+import Login from "../Pages/Login";
+import Resister from "../Pages/Resister";
 
 const router = createBrowserRouter([
     {
@@ -18,6 +21,20 @@ const router = createBrowserRouter([
         }
       ]
     },
+    {
+      path: "/auth",
+      element: <AuthLayouts/>,
+      children:[
+        {
+          path: "/auth/login",
+          element: <Login/>
+        },
+        {
+          path: "/auth/register",
+          element: <Resister/>
+        }
+      ]
+    }
   ]);
 
   export default router;
