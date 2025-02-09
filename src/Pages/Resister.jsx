@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const Resister = () => {
-  const { createNewUser, user, setUser } = useContext(AuthContext);
+  const { createNewUser, setUser } = useContext(AuthContext);
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
@@ -17,6 +17,7 @@ const Resister = () => {
       .then((result) => {
         // Signed up
         const user = result.user;
+        setUser(user);
         console.log(user)
       })
       .catch((error) => {

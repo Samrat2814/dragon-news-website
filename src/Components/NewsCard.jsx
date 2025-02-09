@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { FaRegBookmark, FaEye, FaStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const NewsCard = ({ news }) => {
   return (
@@ -36,7 +37,7 @@ const NewsCard = ({ news }) => {
       </p>
 
       {/* Read More Button */}
-      <button className="text-orange-500 mt-2 font-semibold">Read More</button>
+      <Link to={`/news/${news._id}`} className="text-orange-500 mt-2 font-semibold">Read More</Link>
 
       {/* Rating & Views */}
       <div className="flex justify-between items-center mt-4">
